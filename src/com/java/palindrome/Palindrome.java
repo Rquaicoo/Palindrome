@@ -1,8 +1,6 @@
 package com.java.palindrome;
 
-import java.io.Console;
 import java.util.LinkedList;
-import java.util.PriorityQueue;
 import java.util.Queue;
 import java.util.Stack;
 
@@ -19,13 +17,7 @@ public class Palindrome {
             reverse += stack.pop();
         }
 
-        if ( text.equals(reverse)) {
-            return true;
-        }
-
-        else {
-            return false;
-        }
+        return text.equals(reverse);
     }
 
     public boolean checkWithQueue(String text) {
@@ -41,14 +33,6 @@ public class Palindrome {
         for (int i=0; i < text.length(); i++) {
             reverse = queue.remove() + reverse;
         }
-
-        System.out.println(text + " " + reverse);
-        if ( text.equals(reverse)) {
-            return true;
-        }
-
-        else {
-            return false;
-        }
+        return text.equals(reverse);
     }
 }
